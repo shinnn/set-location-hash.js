@@ -40,7 +40,33 @@ test('if empty hash available', function(t) {
 
   setLocationHash('');
 
-  t.plan(2);
-  t.equal(history.length, 3);
+  t.plan(1);
   t.equal(location.href.split('#')[1], '');
 });
+
+if (typeof history.pushState === 'function' &&
+    typeof history.replaceState === 'function') {
+
+  test('replace option', function(t) {
+    'use strict';
+
+    var currentHistoryLength = history.length;
+
+    setLocationHash('baz', {replace: true});
+
+    t.plan(1);
+    t.equal(history.length, currentHistoryLength);
+  });
+
+  test('force option', function(t) {
+    'use strict';
+
+    var currentHistoryLength = history.length;
+    var currentFrag = location.hash.substring(1);
+
+    setLocationHash(currentFrag, {force: true});
+
+    t.plan(1);
+    t.equal(history.length, currentHistoryLength + 1);
+  });
+}
