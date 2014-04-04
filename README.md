@@ -50,7 +50,7 @@ Pass a `String` to the `fragment` argument and the anchor portion of URL will be
 
 This function is vary similar to `location.hash` property, but this function won't change the scroll position of the page unlike `location.hash`.
 
-If the browser supports `history.pushState` and `history.replaceState`, you can set `replace` and `force` options by passing an `Object` to the `options` argument.
+If the browser supports [`history.pushState`](https://developer.mozilla.org/docs/Web/Guide/DOM/Manipulating_the_browser_history#pushState\(\)_.E3.83.A1.E3.82.BD.E3.83.83.E3.83.89) and [`history.replaceState`](https://developer.mozilla.org/docs/Web/Guide/DOM/Manipulating_the_browser_history#replaceState\(\)_.E3.83.A1.E3.82.BD.E3.83.83.E3.83.89), you can set `replace` and `force` options by passing an `Object` to the `options` argument.
 
 #### options.replace
 
