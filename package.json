@@ -29,6 +29,7 @@
     "location",
     "hash",
     "url",
+    "fragment",
     "client-side",
     "browser"
   ],

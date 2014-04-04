@@ -5,7 +5,8 @@
   "keywords": [
     "location",
     "hash",
-    "url"
+    "url",
+    "fragment"
   ],
   "repo": "shinnn/set-location-hash.js",
   "main": "dist/set-location-hash.js",
