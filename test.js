@@ -35,6 +35,15 @@ test('if scroll position unchanged', function(t) {
   );
 });
 
+test('if returns current URL', function(t) {
+  'use strict';
+
+  var returnVal = setLocationHash('some');
+
+  t.plan(1);
+  t.equal(returnVal, location.href);
+});
+
 test('if empty hash available', function(t) {
   'use strict';
 

@@ -29,17 +29,15 @@ if (typeof history.pushState === 'function' &&
     
     var nextHash = '#' + hash;
     
-    if (location.hash === nextHash && !opts.force) {
-      return;
+    if (location.hash !== nextHash || opts.force) {
+      history[methodName](
+        null,
+        document.title,
+        location.pathname + location.search + nextHash
+      );
     }
     
-    history[methodName](
-      null,
-      document.title,
-      location.pathname + location.search + nextHash
-    );
-    
-    return;
+    return location.href;
   };
 
 } else {
@@ -51,7 +49,7 @@ if (typeof history.pushState === 'function' &&
     body.scrollTop = currentY;
     html.scrollTop = currentY;
 
-    return;
+    return location.href;
   };
 }
 
