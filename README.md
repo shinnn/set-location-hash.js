@@ -3,7 +3,7 @@
 [![Bower version](https://badge.fury.io/bo/set-location-hash.svg)](http://badge.fury.io/bo/set-location-hash)
 [![NPM version](https://badge.fury.io/js/set-location-hash.svg)](http://badge.fury.io/js/set-location-hash)
 [![Build Status](https://travis-ci.org/shinnn/set-location-hash.js.svg?branch=master)](https://travis-ci.org/shinnn/set-location-hash.js)
-[![devDependency Status](https://david-dm.org/shinnn/set-location-hash.js/dev-status.svg?theme=shields.io)](https://david-dm.org/shinnn/set-location-hash.js#info=devDependencies)
+[![devDependency Status](https://david-dm.org/shinnn/set-location-hash.js/dev-status.svg)](https://david-dm.org/shinnn/set-location-hash.js#info=devDependencies)
 
 [![browser support](https://ci.testling.com/shinnn/set-location-hash.js.png)](https://ci.testling.com/shinnn/set-location-hash.js)
 
@@ -44,11 +44,13 @@ npm i --save set-location-hash
 
 ## API
 
-### setLocationHash(fragment, options)
+### setLocationHash(identifier, options)
 
-Pass a `String` to the `fragment` argument and the anchor portion of URL will be changed.
+Return: `String` (Current entire URL)
 
-This function is vary similar to `location.hash` property, but this function won't change the scroll position of the page unlike `location.hash`.
+Change the [fragment identifier](http://www.w3.org/TR/html4/intro/intro.html#h-2.1.2) of current URL to the `String` of the `identifier` argument.
+
+This function is vary similar to `location.hash` property, but this function won't change the scroll position unlike `location.hash`.
 
 If the browser supports [`history.pushState`](https://developer.mozilla.org/docs/Web/Guide/DOM/Manipulating_the_browser_history#pushState\(\)_.E3.83.A1.E3.82.BD.E3.83.83.E3.83.89) and [`history.replaceState`](https://developer.mozilla.org/docs/Web/Guide/DOM/Manipulating_the_browser_history#replaceState\(\)_.E3.83.A1.E3.82.BD.E3.83.83.E3.83.89), you can set `replace` and `force` options by passing an `Object` to the `options` argument.
 
