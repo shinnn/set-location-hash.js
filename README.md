@@ -44,7 +44,7 @@ npm i --save set-location-hash
 
 ## API
 
-### setLocationHash(identifier, options)
+### setLocationHash(identifier[, options])
 
 Return: `String` (Current entire URL)
 
