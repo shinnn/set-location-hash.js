@@ -1,12 +1,13 @@
 {
   "name": "set-location-hash.js",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Set the anchor portion of current URL without scrolling",
   "keywords": [
     "location",
     "hash",
     "url",
-    "fragment"
+    "fragment",
+    "identifier"
   ],
   "repo": "shinnn/set-location-hash.js",
   "main": "dist/set-location-hash.js",
