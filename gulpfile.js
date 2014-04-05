@@ -5,19 +5,19 @@ var $ = require('gulp-load-plugins')();
 
 var stylish = require('jshint-stylish');
 
-var homepage = require('./package.json').homepage;
+var pkg = require('./package.json');
 var banner = [
   '/*!',
-  ' * set-location-hash.js | MIT (c) Shinnosuke Watanabe',
-  ' * <%= homepage %>',
+  ' * <%= pkg.name %>.js | MIT (c) Shinnosuke Watanabe',
+  ' * <%= pkg.homepage %>',
   '*/\n'
 ].join('\n');
 
 gulp.task('lint', function() {
-  gulp.src('{,src/}*.js')
+  gulp.src(['{,src/}*.js'])
     .pipe($.jshint())
     .pipe($.jshint.reporter(stylish));
-  gulp.src('*.json')
+  gulp.src(['*.json'])
     .pipe($.jsonlint())
     .pipe($.jsonlint.reporter());
 });
@@ -30,7 +30,7 @@ gulp.task('transpile', function() {
       exports: 'setLocationHash',
       namespace: 'setLocationHash'
     }))
-    .pipe($.header(banner, {homepage: homepage}))
+    .pipe($.header(banner, {pkg: pkg}))
     .pipe(gulp.dest('dist'));
 });
 
