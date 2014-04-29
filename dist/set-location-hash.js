@@ -5,13 +5,13 @@
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
-    define([], factory);
+    define(factory);
   } else if (typeof exports === 'object') {
-    module.exports = factory();
+    module.exports = factory(require, exports, module);
   } else {
     root.setLocationHash = factory();
   }
-}(this, function() {
+}(this, function(require, exports, module) {
 
 'use strict';
 
@@ -41,9 +41,9 @@ if (typeof history.pushState === 'function' &&
   };
 
 } else {
-  setLocationHash = function(hash ) {
-    var body = document.body, html = document.documentElement;
+  var body = document.body, html = document.documentElement;
 
+  setLocationHash = function(hash ) {
     var currentY = body.scrollTop || html.scrollTop;
     location.hash = '' + hash;
     body.scrollTop = currentY;

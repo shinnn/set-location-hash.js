@@ -26,9 +26,9 @@ if (typeof history.pushState === 'function' &&
   };
 
 } else {
-  setLocationHash = hash => {
-    let {body, documentElement: html} = document;
+  var {body, documentElement: html} = document;
 
+  setLocationHash = hash => {
     let currentY = body.scrollTop || html.scrollTop;
     location.hash = '' + hash;
     body.scrollTop = currentY;
