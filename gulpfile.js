@@ -2,7 +2,6 @@
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
-
 var stylish = require('jshint-stylish');
 
 var pkg = require('./package.json');
@@ -26,7 +25,6 @@ gulp.task('transpile', function() {
   gulp.src(['src/*.js'])
     .pipe($.es6Transpiler())
     .pipe($.wrapUmd({
-      deps: [],
       exports: 'setLocationHash',
       namespace: 'setLocationHash'
     }))
@@ -36,7 +34,7 @@ gulp.task('transpile', function() {
 
 gulp.task('watch', function() {
   gulp.watch(['src/*.js'], ['transpile']);
-  gulp.watch(['{,src/}*.js', '*.json'], ['lint']);
+  gulp.watch(['{,src/}*.js', '*.json', '.jshintrc'], ['lint']);
 });
 
 gulp.task('build', ['lint', 'transpile']);
