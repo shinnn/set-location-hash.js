@@ -1,6 +1,6 @@
 {
   "name": "set-location-hash",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Set the anchor portion of current URL without scrolling",
   "keywords": [
     "location",
@@ -25,6 +25,8 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
+    "dist/set-location-hash-amd.js",
+    "dist/set-location-hash-cjs.js",
     "node_modules",
     "src",
     "test.js",

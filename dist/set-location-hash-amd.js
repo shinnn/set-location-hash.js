@@ -1,3 +1,9 @@
+/*!
+ * set-location-hash.js | MIT (c) Shinnosuke Watanabe
+ * https://github.com/shinnn/set-location-hash.js
+*/
+define(function(require,exports,module){
+
 'use strict';
 
 var setLocationHash;
@@ -43,3 +49,7 @@ if (typeof history.pushState === 'function' &&
     return location.href;
   };
 }
+
+return setLocationHash;
+
+});

@@ -1,5 +1,5 @@
 var test = require('tape');
-var setLocationHash = require('./dist/set-location-hash.js');
+var setLocationHash = require('./dist/set-location-hash-cjs.js');
 
 var body = document.body;
 body.style.padding = '0 1px 1px 0';
@@ -26,7 +26,7 @@ test('setLocationHash()', function(t) {
   }
 
   setLocationHash('some');
-  
+
   t.equal(
     location.hash,
     '#some',
@@ -34,7 +34,7 @@ test('setLocationHash()', function(t) {
   );
 
   setLocationHash('some');
-  
+
   t.equal(
     body.scrollTop || document.documentElement.scrollTop,
     0,
@@ -54,11 +54,11 @@ test('setLocationHash()', function(t) {
     '',
     'should remove fragment identifier when the argument is empty string.'
   );
-  
+
   if (historyAvailable) {
     var currentHistoryLength = history.length;
     setLocationHash('baz', {replace: true});
-    
+
     t.equal(
       history.length,
       currentHistoryLength,
@@ -68,7 +68,7 @@ test('setLocationHash()', function(t) {
     currentHistoryLength = history.length;
     var currentFrag = location.hash.substring(1);
     setLocationHash(currentFrag, {force: true});
-    
+
     t.equal(
       history.length,
       currentHistoryLength + 1,

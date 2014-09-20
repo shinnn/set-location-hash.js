@@ -1,7 +1,10 @@
-.travis.yml
+.editorconfig
 .jshintrc
-gulpfile.js
+*.yml
 src/
-test.js
+dist/set-location-hash.js
+dist/set-location-hash-amd.js
 bower.json
 component.json
+gulpfile.js
+test.js

@@ -18,7 +18,7 @@ location.href; //=> "http://yoursite.com/#foo"
 
 ## Installation
 
-### Install with package manager
+### Package managers
 
 #### [Bower](http://bower.io/)
 
@@ -26,37 +26,44 @@ location.href; //=> "http://yoursite.com/#foo"
 bower i --save set-location-hash
 ```
 
-#### [Component](http://component.io/)
-
-```
-component install shinnn/set-location-hash.js
-```
-
-#### [npm](https://www.npmjs.org/) (Use with [Browserify](http://browserify.org/) etc.)
+#### [npm](https://www.npmjs.org/)
 
 ```
 npm i --save set-location-hash
+```
+
+#### [Duo](http://duojs.org/)
+
+```javascript
+var setLocationHash = require('shinnn/set-location-hash.js');
 ```
 
 ### Standalone
 
 [Download the script file directly.](https://raw.githubusercontent.com/shinnn/set-location-hash.js/master/dist/set-location-hash.js "view raw")
 
+### [AMD](https://github.com/amdjs/amdjs-api/blob/master/AMD.md) support
+
+This repository includes [the AMD-friendly build](https://raw.githubusercontent.com/shinnn/set-location-hash.js/master/dist/set-location-hash-amd.js) but the package managers doesn't include it. If you want to use it, download it directly.
+
 ## API
 
-### setLocationHash(identifier[, options])
+### setLocationHash(*identifier* [, *options*])
 
+*identifier*: `String`  
+*options*: `Object`  
 Return: `String` (Current entire URL)
 
 Change the [fragment identifier](http://www.w3.org/TR/html4/intro/intro.html#h-2.1.2) of current URL to the `String` of the `identifier` argument.
 
 This function is vary similar to `location.hash` property, but this function won't change the scroll position of the page unlike `location.hash`.
 
-If the browser supports [`history.pushState`](https://developer.mozilla.org/docs/Web/Guide/DOM/Manipulating_the_browser_history#pushState\(\)_.E3.83.A1.E3.82.BD.E3.83.83.E3.83.89) and [`history.replaceState`](https://developer.mozilla.org/docs/Web/Guide/DOM/Manipulating_the_browser_history#replaceState\(\)_.E3.83.A1.E3.82.BD.E3.83.83.E3.83.89), you can set `replace` and `force` options by passing an `Object` to the `options` argument.
+If the browser supports [`history.pushState`](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history#The_pushState\(\).C2.A0method) and [`history.replaceState`](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history#The_replaceState\(\).C2.A0method), you can set `replace` and `force` options by passing an `Object` to the `options` argument.
 
 #### options.replace
 
-Type: `Boolean` Default: `false`
+Type: `Boolean`  
+Default: `false`
 
 Replace the browser history instead of pushing a new history.
 
@@ -74,7 +81,8 @@ history.length; //=> 2
 
 #### options.force
 
-Type: `Boolean` Default: `false`
+Type: `Boolean`  
+Default: `false`
 
 By default, this function doesn't push a new history when the old URL is the same as new one. If you set this option `true`, it will push a new history in any case.
 
@@ -94,4 +102,4 @@ history.length; //=> 2
 
 Copyright (c) 2014 [Shinnosuke Watanabe](https://github.com/shinnn)
 
-Licensed under [the MIT LIcense](./LICENSE).
+Licensed under [the MIT License](./LICENSE).
